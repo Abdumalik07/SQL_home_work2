@@ -107,8 +107,23 @@ insert into Car_brands (id, brand, model, colour, year, price) values (98, 'Hond
 insert into Car_brands (id, brand, model, colour, year, price) values (99, 'Kia', 'Sorento', 'Orange', 2009, 24212);
 insert into Car_brands (id, brand, model, colour, year, price) values (100, 'Honda', 'Pilot', 'Puce', 2008, 15553);
 
-/*1*/ SELECT brand,model,price FROM Car_brands;
-/*2*/ SELECT count(*) FROM Car_brands;
-/*3*/ SELECT * FROM Car_brands WHERE brand IN ('Mazda');
-/*4*/ SELECT * FROM Car_brands WHERE colour IN ('Red','Blue');
-/*5*/ SELECT * FROM Car_brands WHERE year BETWEEN '2000' AND '2010';
+
+/*1*/  SELECT brand,model,price FROM Car_brands;
+/*2*/  SELECT count(*) FROM Car_brands;
+/*3*/  SELECT * FROM Car_brands WHERE brand IN ('Mazda');
+/*4*/  SELECT * FROM Car_brands WHERE colour IN ('Red','Blue');
+/*5*/  SELECT * FROM Car_brands WHERE year BETWEEN 2000 AND 2010;
+/*6*/  SELECT count(id) AS quantity_car_Chevrolet FROM Car_brands WHERE brand IN ('Chevrolet');
+/*7*/  SELECT avg(year) AS average_years_of_cars FROM Car_brands;
+/*8*/  SELECT * FROM Car_brands WHERE brand IN ('Audi','Toyota','Kia','Ford');
+/*9*/  SELECT * FROM Car_brands WHERE model LIKE ('T%');
+/*10*/ SELECT * FROM Car_brands WHERE model LIKE ('%e');
+/*11*/ SELECT DISTINCT brand FROM Car_brands WHERE length(brand)=5;
+/*12*/ SELECT sum(price) AS all_amounts_of_Mercedes_Benz FROM Car_brands WHERE brand IN ('Mercedes-Benz');
+/*13*/ SELECT max(price), min(price) FROM Car_brands;
+/*14*/ SELECT * FROM Car_brands WHERE brand NOT IN ('Toyota');
+/*15*/ SELECT * FROM Car_brands ORDER BY price DESC LIMIT 10;
+/*16*/ SELECT * FROM Car_brands ORDER BY year DESC LIMIT 10 OFFSET 5;
+/*17*/ SELECT * FROM Car_brands WHERE year NOT BETWEEN 1995 AND 2005;
+/*18*/ SELECT DISTINCT colour, count(id)FROM Car_brands group by colour ORDER BY count(id) DESC;
+
